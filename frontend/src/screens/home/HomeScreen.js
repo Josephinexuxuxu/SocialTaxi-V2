@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { SimpleLineIcons, MaterialIcons } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons';
 
 import { LoadingScreen } from '../../commons';
 import { MyMeetupsList } from './components';
@@ -10,14 +10,7 @@ import { MyMeetupsList } from './components';
 import { fetchMyMeetups } from './actions';
 import Colors from '../../../constants/Colors';
 import styles from './styles/HomeScreen';
-/*
-const stateMap = (state) => {
-  return{
-    myMeetups: state.home.myMeetups,
-    fetchMyMeetups
-  }
-};
-*/
+import { CreateMeetupScreen } from '../createMeetup/CreateMeetupScreen';
 
 
 @connect(
@@ -29,24 +22,24 @@ const stateMap = (state) => {
 
 
 class HomeScreen extends Component {
-    static navigationOptions = {
-
-    //header: ({ navigate }) => {
+    static navigationOptions = ({navigation: {navigate}})=>({
       title: 'HomeScreen',
       headerTitleStyle:{
         color: '#40D4EB'
       },
-      headerStyle: { backgroundColor: '#fff' },
+      headerStyle: { backgroundColor: '#fff'},
+
 
       headerRight: (
-        <TouchableOpacity style={{marginRight:10}} onPress={() => this.props.navigation.navigate('CreateMeetup')}>
-        <MaterialIcons
-          name="add-circle"
+        <TouchableOpacity style={{marginRight:10}} onPress={() => navigate('CreateMeetup')}>
+        <SimpleLineIcons
+          name="plus"
           size={30}
           color="#40D4EB"
         />
       </TouchableOpacity>
       ),
+
     //},
     tabBarIcon: ({tintColor}) => (
       <SimpleLineIcons
@@ -55,7 +48,7 @@ class HomeScreen extends Component {
       color={tintColor}
       />
     )
-  }
+  })
 
    componentDidMount() {
     this.props.fetchMyMeetups();
@@ -91,5 +84,4 @@ class HomeScreen extends Component {
     );
   }
 }
-
 export default HomeScreen;

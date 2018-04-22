@@ -21,7 +21,7 @@ const CreateMeetupForm = ({
       component={TextInputWithValidations}
       name="title"
       label="Title"
-      selectionColor={Colors.redColor}
+      selectionColor={'#FB9692'}
       containerStyle={styles.item}
     />
     <Field
@@ -29,23 +29,24 @@ const CreateMeetupForm = ({
       name="description"
       label="Description"
       multiline
-      selectionColor={Colors.redColor}
+      selectionColor={'#FB9692'}
       containerStyle={styles.item}
     />
     <View style={styles.item}>
       <Button
+        height='100'
         raised
-        fontFamily="montserrat"
+        fontFamily="SignikaMedium"
         onPress={showDateTimePicker}
         title={checkTitle}
       />
     </View>
     <View style={styles.buttonCreate}>
       <Button
-        backgroundColor={Colors.blackBlueColor}
+        backgroundColor={'#384259'}
         title="Create Meetup"
         raised
-        fontFamily="montserrat"
+        fontFamily="SignikaMedium"
         disabled={invalid || submitting}
         onPress={handleSubmit(createMeetup)}
       />

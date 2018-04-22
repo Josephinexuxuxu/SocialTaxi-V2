@@ -7,4 +7,5 @@ export default StackNavigator({
   CreateMeetup: { screen: CreateMeetupScreen }
 },{
   mode:'modal'
-});
+}
+);

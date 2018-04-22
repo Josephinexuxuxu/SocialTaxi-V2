@@ -2,8 +2,7 @@ import { TabNavigator } from 'react-navigation';
 import {
   HomeScreen,
   NotificationsScreen,
-  ProfileScreen,
-  CreateMeetupScreen
+  ProfileScreen
 } from '../screens';
 
 export default TabNavigator({

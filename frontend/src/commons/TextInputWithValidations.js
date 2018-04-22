@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { FormInput, FormLabel, FormValidationMessage } from 'react-native-elements';
-
+import { fontAssets } from '../../helpers';
 import Colors from '../../constants/Colors';
 
 const TextInputWithValidations = ({
@@ -12,7 +12,7 @@ const TextInputWithValidations = ({
   ...custom
 }) => (
   <View style={containerStyle}>
-    <FormLabel fontFamily="montserrat" labelStyle={{ color: Colors.blackBlueColor }}>
+    <FormLabel fontFamily="SignikaRegular" labelStyle={{ color: '#384259' }}>
       {label}
     </FormLabel>
     <FormInput
@@ -20,7 +20,7 @@ const TextInputWithValidations = ({
       {...custom}
     />
     {error && touched &&
-      <FormValidationMessage fontFamily="montserrat" labelStyle={{ color: Colors.redColor }}>
+      <FormValidationMessage fontFamily="SignikaRegular" labelStyle={{ color: '#FB9692' }}>
         {error}
       </FormValidationMessage>
     }

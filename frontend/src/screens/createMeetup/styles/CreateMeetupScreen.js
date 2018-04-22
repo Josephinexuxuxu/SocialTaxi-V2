@@ -5,9 +5,19 @@ const styles = EStyleSheet.create({
     flex: 1,
     alignItems: 'center'
   },
-  iconClose: {
-    marginLeft: '3%'
+  container:{
+    flex: 1,
+    width: '90'
   },
+
+  iconClose: {
+    marginLeft: '3'
+  },
+  buttonCreate:{
+    position:'absolute',
+    right:0,
+    left: 0
+  }
 });
 
 export default styles;
